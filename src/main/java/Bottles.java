@@ -8,25 +8,25 @@ class Bottles {
     public static void writeLyrics(PrintStream out) {
         for (int beers = 99; beers > -1; beers--) {
             if (beers == 0) {
-                out.print(beers + " bottles" + " of beer on the wall,");
-                out.println(beers + " bottles" + " of beer,");
+                out.print(beers + " " + container(beers) + " of beer on the wall,");
+                out.println(beers + " " + container(beers) + " of beer,");
                 out.print(actionAfterTakeBeer(beers));
-                out.println("99 bottles" + " of beer on the wall.\r\n");
+                out.println("99 " + container(beers) + " of beer on the wall.\r\n");
             } else if (beers == 1) {
-                out.print(beers + " bottle" + " of beer on the wall,");
-                out.println(beers + " bottle" + " of beer,");
+                out.print(beers + " " + container(beers) + " of beer on the wall,");
+                out.println(beers + " " + container(beers) + " of beer,");
                 out.print(actionAfterTakeBeer(beers));
-                out.println(beers - 1 + " bottles" + " of beer on the wall.\r\n");
+                out.println(beers - 1 + " " + container(beers - 1) + " of beer on the wall.\r\n");
             } else if (beers == 2) {
-                out.print(beers + " bottles" + " of beer on the wall,");
-                out.println(beers + " bottles" + " of beer,");
+                out.print(beers + " " + container(beers) + " of beer on the wall,");
+                out.println(beers + " " + container(beers) + " of beer,");
                 out.print(actionAfterTakeBeer(beers));
-                out.println(beers - 1 + " bottle" + " of beer on the wall.\r\n");
+                out.println(beers - 1 + " " + container(beers - 1) + " of beer on the wall.\r\n");
             } else {
-                out.print(beers + " bottles" + " of beer on the wall,");
-                out.println(beers + " bottles" + " of beer,");
+                out.print(beers + " " + container(beers) + " of beer on the wall,");
+                out.println(beers + " " + container(beers) + " of beer,");
                 out.print(actionAfterTakeBeer(beers));
-                out.println(beers - 1 + " bottles" + " of beer on the wall.\r\n");
+                out.println(beers - 1 + " " + container(beers - 1) + " of beer on the wall.\r\n");
             }
         }
     }
@@ -35,4 +35,7 @@ class Bottles {
         return beers == 0 ? "Go to the store, buy some more," : "Take one down, pass it around,";
     }
 
+    private static String container(int beers) {
+        return beers == 1 ? "bottle" : "bottles";
+    }
 }
