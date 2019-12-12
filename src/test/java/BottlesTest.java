@@ -11,7 +11,7 @@ public class BottlesTest {
     @Test
     public void testSong() throws IOException {
         final ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        Bottles.writeLyrics(
+        Verse.writeLyrics(
                 new PrintStream(
                         stream));
 
